@@ -1,0 +1,43 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Search</title>
+    <script src="js/angular.min.js"></script>
+    <script src="js/jQuery.js"></script>
+    <script src="js/myJs.js"></script>
+    <link rel="stylesheet" href="css/index.css">
+</head>
+<body>
+    <div class="top_bar">
+        <h2>
+            Somewhat Interesting DataBase of Movies
+        </h2>
+    </div>
+    <div ng-app="movie_search" ng-controller="myCntrl">
+        <div class="content">
+            <!--<h4>Select the type to search for</h4>-->
+            <!--<input type="radio" name="typeSearch" value="i" ng-model="typeSearch" checked="checked">IMDB <br>-->
+            <!--<input type="radio" name="typeSearch" value="t" ng-model="typeSearch" >Title <br>-->
+            <input type="text" placeholder="Search" id="movieTitle" ng-model="movieTitle" ng-change="suggestion()">
+            <button>GO</button>
+            <div class="suggestion">
+                <div ng-repeat="movie in data" ng-click="search(movie.Title)" class="suggestion_card">
+                    <div class="img_part">
+                        <img ng-src="{{movie.Poster}}" alt="{{movie.Title}}">
+                    </div>
+                    <div class="data_part">
+                        <h2>{{movie.Title}}</h2>
+                        <h3>Year : {{movie.Year}}</h3>
+                        <h3>IMDB : {{movie.imdbID}}</h3>
+                    </div>
+                </div>
+            </div>
+            <div class="movie" id="movie">
+                {{selected_movie}}
+            </div>
+        </div>
+    </div>
+</body>
+</html>

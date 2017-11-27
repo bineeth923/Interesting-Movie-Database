@@ -1,0 +1,133 @@
+/* Created by Bineeth */
+
+/*-----Defaults----------*/
+@font-face {
+    font-family: "Chiller";
+    src: url("fonts/CHILLER.TTF");
+}
+::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+    color: #00000021;
+}
+::-moz-placeholder { /* Firefox 19+ */
+    color: #00000021;
+}
+:-ms-input-placeholder { /* IE 10+ */
+    color: #00000021;
+}
+:-moz-placeholder { /* Firefox 18- */
+    color: #00000021;
+}
+html{
+    width:100%;
+    height:100%;
+    background:  linear-gradient( rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7) ),url('img/160412_iot_military.jpg');
+}
+body{
+    margin: 0;
+    padding: 0;
+    height:100%;
+}
+/*------------------------*/
+/*--------top bar---------*/
+
+.top_bar{
+    display: block;
+    width: 100%;
+    text-align: center;
+    font-family: Chiller, cursive;
+    font-size: 4em;
+    vertical-align: middle;
+    box-shadow: 0 3px 20px 0 #00000087;
+    color:white;
+}
+.top_bar h2 {
+    margin-top: 0;
+    margin-bottom: 0;
+    padding: .5em 0;
+}
+
+/*-------------------------/
+/*-------Main Content-------*/
+
+.content{
+    display: block;
+    text-align: center;
+    padding: 3em 1.5em ;
+}
+input[type=text],input[type=text]:hover,
+input[type=text]:focus{
+    border: thin solid white;
+    border-right-color: lightgray;
+    border-bottom-color: lightgray;
+}
+
+input[type=text]{
+    width: 50%;
+    transition: 0.35s ease-in ;
+    font-size: xx-large;
+    font-family: monospace;
+    padding: 0.3em 1em;
+    border-radius: 20px 0 0 20px;
+}
+input[type=text]:hover{
+    box-shadow: 6px 5px 9px 0 #00000075;
+}
+input[type=text]:focus{
+    box-shadow: 6px 5px 9px 0 #1e129275;
+    background-color: white;
+    outline: none;
+}
+input[type=submit],button{
+    height: 100%;
+    font-size: xx-large;
+    font-family: monospace;
+    width: 3em;
+    margin: -4px;
+    outline: none;
+    background-color: lightgreen;
+    border: none;
+    padding: 9px;
+    border-bottom-right-radius: 20px;
+    border-top-right-radius: 20px;
+}
+/*------search results-----*/
+.suggestion{
+    width: 52.2%;
+    margin-left: 22%;
+    background: white;
+}
+.suggestion a{
+    display: block ;
+}
+.suggestion_card{
+    border: 1px solid lightgray;
+    padding: .5em;
+    margin: 0.01em;
+    transition: 0.35s ease-in-out;
+    contain:content;
+}
+.suggestion_card:hover{
+    box-shadow: inset 0 0 20px black;
+    border:none;
+    cursor: pointer;
+}
+.img_part{
+    width:40%;
+    float:left;
+}
+.img_part img{
+    width : 8em;
+}
+
+/*--------------------------*/
+/*--------Selected movie------*/
+.movie{
+
+    width:80%;
+    height:80%;
+    margin:5em;
+    background-color: white;
+   
+}
+
+/*----------------------------*/
