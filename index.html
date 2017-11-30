@@ -21,21 +21,39 @@
             <!--<input type="radio" name="typeSearch" value="i" ng-model="typeSearch" checked="checked">IMDB <br>-->
             <!--<input type="radio" name="typeSearch" value="t" ng-model="typeSearch" >Title <br>-->
             <input type="text" placeholder="Search" id="movieTitle" ng-model="movieTitle" ng-change="suggestion()">
-            <button>GO</button>
-            <div class="suggestion">
-                <div ng-repeat="movie in data" ng-click="search(movie.Title)" class="suggestion_card">
+            <button ng-click="search(movieTitle)">GO</button>
+            <div class="suggestion" ng-show="data">
+                <div ani ng-repeat="movie in data" ng-click="search(movie.Title)" class="suggestion_card">
                     <div class="img_part">
                         <img ng-src="{{movie.Poster}}" alt="{{movie.Title}}">
                     </div>
                     <div class="data_part">
-                        <h2>{{movie.Title}}</h2>
-                        <h3>Year : {{movie.Year}}</h3>
-                        <h3>IMDB : {{movie.imdbID}}</h3>
+                        <p class="movieTitle">{{movie.Title}}</p>
+                        <p class="movie_desc">Year : {{movie.Year}}</p>
+                        <p class="movie_desc">IMDB : {{movie.imdbID}}</p>
                     </div>
                 </div>
             </div>
             <div class="movie" id="movie">
-                {{selected_movie}}
+                <div id="img">
+                    <img ng-src="{{selected_movie.Poster}}"/>
+                </div>
+                <div id="data" ng-hide="!selected_movie">
+                    <p id="selected_title">{{selected_movie.Title}}</p>
+                    <p class="selected_desc"><span>Year:</span>{{selected_movie.Year}}</p>
+                    <p class="selected_desc"><span>IMDB id:</span>{{selected_movie.imdbID}}</p>
+                    <p class="selected_desc"><span>Released on:</span> {{selected_movie.Released}}</p>
+                    <p class="selected_desc"><span>Runtime :</span> {{selected_movie.Runtime}}</p>
+                    <p class="selected_desc2"><span>Genre:</span> {{selected_movie.Genre}}</p>
+                    <p class="selected_desc2"><span>Director :</span> {{selected_movie.Director}}</p>
+                    <p class="selected_desc2"><span>Writer : </span>{{selected_movie.Writer}}</p>
+                    <p class="selected_desc2"><span>Actors : </span>{{selected_movie.Actors}}</p>
+                    <p class="selected_desc3"><span>Plot :</span> {{selected_movie.Plot}}</p>
+                    <p class="selected_desc4"><span>Language : </span>{{selected_movie.Language}}</p>
+                    <p class="selected_desc4"><span>Country :</span> {{selected_movie.Country}}</p>
+                    <p class="selected_desc4"><span>Box office :</span> {{selected_movie.BoxOffice}}</p>
+                    <p class="selected_desc4"><span>Production : </span>{{selected_movie.Production}}</p>
+                </div>
             </div>
         </div>
     </div>

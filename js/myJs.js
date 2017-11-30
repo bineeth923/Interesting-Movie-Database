@@ -17,6 +17,9 @@ app.controller('myCntrl' , function ($scope , $http) {
                 });
             }
         }
+        else {
+            $scope.data = "";
+        }
     };
     console.log($scope.typeSearch+ "-" + type.test($scope.movieTitle) );
     $scope.search = function($name_of_movie) {
@@ -32,12 +35,27 @@ app.controller('myCntrl' , function ($scope , $http) {
             url:'http://www.omdbapi.com/?apikey=ef1b9692&' + $scope.typeSearch + '='+ $name_of_movie
         }).then(function (response) {
             $scope.selected_movie = response.data;
-            //console.log(response)
+            $scope.movieTitle = response.data.Title;
+            console.log(response.data.Title)
             });
-        document.getElementById("movie").setAttribute("style", "color:red;display:none");
+        // $(window).scroll(function () {
+        //     $(".suggestion_card").each(function (i) {
+        //         var bottom_of_object = $(this).offset().top + $(this).outerHeight();
+        //         var bottom_of_window = $(window).scrollTop() + $(window).height();
+        //         console.log(bottom_of_object + ": " + bottom_of_window + "\n");
+        //         if( bottom_of_window > bottom_of_object ){
+        //             $(this).animate({'opacity':'1'},500);
+        //         }
+        //     })
+        // });
+        document.getElementById("movie").setAttribute("style","display:inherit")
     }
+});
 
-
-
-
+app.directive("ani" , function () {
+    return {
+        compile: function (tElement, tAttributes) {
+            $(tElement).animate({'opacity': '1', 'top': '20px'}, 'slow');
+        }
+    }
 });

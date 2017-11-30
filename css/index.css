@@ -1,6 +1,7 @@
 /* Created by Bineeth */
 
 /*-----Defaults----------*/
+@import url('https://fonts.googleapis.com/css?family=Barlow+Semi+Condensed');
 @font-face {
     font-family: "Chiller";
     src: url("fonts/CHILLER.TTF");
@@ -37,7 +38,7 @@ body{
     font-family: Chiller, cursive;
     font-size: 4em;
     vertical-align: middle;
-    box-shadow: 0 3px 20px 0 #00000087;
+    /*box-shadow: 0 3px 20px 0 #00000087;*/
     color:white;
 }
 .top_bar h2 {
@@ -62,11 +63,11 @@ input[type=text]:focus{
 }
 
 input[type=text]{
-    width: 50%;
+    width: 40%;
     transition: 0.35s ease-in ;
     font-size: xx-large;
     font-family: monospace;
-    padding: 0.3em 1em;
+    padding: 0.3em 1.5em;
     border-radius: 20px 0 0 20px;
 }
 input[type=text]:hover{
@@ -76,6 +77,7 @@ input[type=text]:focus{
     box-shadow: 6px 5px 9px 0 #1e129275;
     background-color: white;
     outline: none;
+
 }
 input[type=submit],button{
     height: 100%;
@@ -90,35 +92,74 @@ input[type=submit],button{
     border-bottom-right-radius: 20px;
     border-top-right-radius: 20px;
 }
+button{
+    cursor: pointer;
+}
 /*------search results-----*/
 .suggestion{
     width: 52.2%;
     margin-left: 22%;
-    background: white;
+    margin-top: .5em;
+    padding: 1em;
+    border-radius: 3px;
+    background-color: #f9d7d752;
+    height: 50vh;
+    overflow: auto;
+    contain: content;
+}
+.suggestion::-webkit-scrollbar {
+    width: 1em;
+}
+
+.suggestion::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+}
+
+.suggestion::-webkit-scrollbar-thumb {
+    background-color: darkgrey;
+    outline: 1px solid slategrey;
+    border-radius: 5px;
 }
 .suggestion a{
     display: block ;
 }
 .suggestion_card{
-    border: 1px solid lightgray;
+    /*border: 1px solid lightgray;*/
     padding: .5em;
-    margin: 0.01em;
     transition: 0.35s ease-in-out;
     contain:content;
+    background-color: white;
+    margin: 1em 0;
+    border-radius: 5px;
+    box-shadow:  0 0 5px white;
+    opacity: 0;
 }
 .suggestion_card:hover{
-    box-shadow: inset 0 0 20px black;
+    box-shadow:  0 -1px 20px white;
     border:none;
     cursor: pointer;
 }
+.data_part{
+    margin-top: 1em;
+}
 .img_part{
-    width:40%;
+    width:20%;
     float:left;
 }
 .img_part img{
-    width : 8em;
+    width : 2em;
 }
-
+.movieTitle , .movie_desc{
+    display: inline;
+    margin: 0 1em;
+}
+.movieTitle{
+    font-size: medium;
+    font-weight: bold;
+}
+.movie_desc{
+    font-size: small;
+}
 /*--------------------------*/
 /*--------Selected movie------*/
 .movie{
@@ -126,8 +167,40 @@ input[type=submit],button{
     width:80%;
     height:80%;
     margin:5em;
-    background-color: white;
-   
+    background-color: transparent;
+    color: white;
+    display:none;
 }
-
+.movie #img{
+    width: 30%;
+    float: right;
+    margin-top: 2.2em;
+}
+.movie #data{
+    width: 70%;
+    text-align: center;
+}
+#data p{
+    margin: 0;
+}
+#data p span{
+    font-weight: 600;
+}
+#selected_title{
+    font-family:'Barlow Semi Condensed', sans-serif; ;
+    font-size: 4em;
+}
+.selected_desc{
+    display: inline;
+    padding-left: 10px;
+}
+.selected_desc2:first-child{
+    padding-top:20px;
+}
+.selected_desc3:first-child{
+    padding-top: 20px;
+}
+.selected_desc4{
+    padding-top: 20px;
+}
 /*----------------------------*/
