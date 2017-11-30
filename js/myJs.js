@@ -11,7 +11,7 @@ app.controller('myCntrl' , function ($scope , $http) {
             else {
                 $http({
                     method: "GET",
-                    url: 'http://www.omdbapi.com/?apikey=ef1b9692&s=' + $scope.movieTitle
+                    url: 'https://www.omdbapi.com/?apikey=ef1b9692&s=' + $scope.movieTitle
                 }).then(function (response) {
                     $scope.data = response.data.Search;
                 });
@@ -32,7 +32,7 @@ app.controller('myCntrl' , function ($scope , $http) {
         }
         $http({
             method: "GET",
-            url:'http://www.omdbapi.com/?apikey=ef1b9692&' + $scope.typeSearch + '='+ $name_of_movie
+            url:'https://www.omdbapi.com/?apikey=ef1b9692&' + $scope.typeSearch + '='+ $name_of_movie
         }).then(function (response) {
             $scope.selected_movie = response.data;
             $scope.movieTitle = response.data.Title;
